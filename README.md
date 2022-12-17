@@ -2,36 +2,36 @@
 
 # Genetic Algorithm(GA) and Ant Colony Optimization(ACO) to solve vehicle routing problem \*(for my interest)
 
-## How to run script
+## How to run GA
 
 ```bash
-python run.py
+python ga.py
 ```
 
 Change Path of input data
 
 ```bash
-    python run.py --input_path {path_of_data}
+    python ga.py --input_path {path_of_data}
 example
-    python run.py --input_path .\data\json\homberger_{nodes}_customer_instances\
+    python ga.py --input_path .\data\json\homberger_{nodes}_customer_instances\
 ```
 
 Change Population Size
 
 ```bash
-    python run.py --pop_size {number_of_population:int}
+    python ga.py --pop_size {number_of_population:int}
 ```
 
 Change Mutation rate
 
 ```bash
-    python run.py --mute_pop {mutation_rate:float}
+    python ga.py --mute_pop {mutation_rate:float}
 ```
 
 Change Iterations
 
 ```bash
-    python run.py --iterations {number_of_iterations:int}
+    python ga.py --iterations {number_of_iterations:int}
 ```
 
 Development Stage:
