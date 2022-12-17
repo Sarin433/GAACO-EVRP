@@ -25,13 +25,24 @@ Change Population Size
 Change Mutation rate
 
 ```bash
-    python ga.py --mute_pop {mutation_rate:float}
+    python ga.py --mute_prob {mutation_rate:float}
 ```
 
 Change Iterations
 
 ```bash
     python ga.py --iterations {number_of_iterations:int}
+```
+
+Example
+
+- path: .\data\json\homberger_200_customer_instances\c1_2_1.json
+- population size: 1000
+- mutation rate: 0.4
+- iterations: 1000
+
+```bash
+    python ga.py --input_path .\data\json\homberger_200_customer_instances\c1_2_1.json --pop_size 1000 --mute_prob 0.4 --iterations 1000
 ```
 
 Development Stage:
