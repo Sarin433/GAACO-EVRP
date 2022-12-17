@@ -40,6 +40,7 @@ Development Stage:
 - [x] Data Transformation (from text to JSON)
 - [ ] Ant Colony Optimization (ACO)
 - [ ] Combine GA and ACO
+- [ ] E-VRP Data Transformation (from text to JSON)
 
 ## Reference
 
