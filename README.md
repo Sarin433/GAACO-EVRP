@@ -45,7 +45,7 @@ Example
     python ga.py --input_path .\data\json\homberger_200_customer_instances\c1_2_1.json --pop_size 1000 --mute_prob 0.4 --iterations 1000
 ```
 
-Development Stage:
+## Development Stage:
 
 - [x] Simple GA
 - [x] Data Transformation (from text to JSON)
