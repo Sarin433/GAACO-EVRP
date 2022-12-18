@@ -8,7 +8,7 @@
 python ga.py
 ```
 
-Change Path of input data
+Change input data path
 
 ```bash
     python ga.py --input_path {path_of_data}
