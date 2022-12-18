@@ -1,18 +1,21 @@
 import numpy as np
 import random
 
+# Single Point Crossover
 def single_point_crossover(chromo1,chromo2,points):
     # onePoints = random.randint(0,min(len(chromo1),len(chromo2)))
     ind1_new = np.append(chromo1[:points], chromo2[points:])
     ind2_new = np.append(chromo2[:points], chromo1[points:])
     return list(ind1_new), list(ind2_new)
 
+# Multi-points Crossover
 def multi_point_crossover(chromo1,chromo2,points):
     randomPoints = sorted(random.sample(range(0, min(len(chromo1),len(chromo2))), points))
     for i in randomPoints:
         chromo1, chromo2 = single_point_crossover(chromo1,chromo2,i)
     return list(chromo1), list(chromo2)
 
+# Order Crossover
 def ordered_crossover(chromo1, chromo2):
     # Modifying this to suit our needs
     #  If the sequence does not contain 0, this throws error
@@ -52,3 +55,12 @@ def ordered_crossover(chromo1, chromo2):
     ind1 = [x+1 for x in ind1]
     ind2 = [x+1 for x in ind2]
     return ind1, ind2
+
+# Uniform Crossover
+def uniform_crossover(chromo1, chromo2, points):
+    for i in range(len(points)):
+        if points[i] < 0.5:
+            temp = chromo1[i]
+            chromo1 = chromo2[i]
+            chromo2 = temp
+    return chromo1, chromo2
