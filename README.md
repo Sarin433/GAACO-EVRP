@@ -60,3 +60,7 @@ Example
 https://github.com/krishna-praveen/Capacitated-Vehicle-Routing-Problem#assumptions
 
 https://github.com/Henryy-rs/GA-VRP.git
+
+- Crossover in Genetic Algorithm
+
+https://www.geeksforgeeks.org/crossover-in-genetic-algorithm/
