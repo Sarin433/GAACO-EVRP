@@ -57,10 +57,10 @@ def ordered_crossover(chromo1, chromo2):
     return ind1, ind2
 
 # Uniform Crossover
-def uniform_crossover(chromo1, chromo2, points):
-    for i in range(len(points)):
-        if points[i] < 0.5:
-            temp = chromo1[i]
-            chromo1 = chromo2[i]
-            chromo2 = temp
+def uniform_crossover(chromo1, chromo2, crossover_prob):
+    size = min(len(chromo1), len(chromo2))
+    for i in range(len(size)):
+        if random.random() < crossover_prob:
+            chromo1[i], chromo2[i] = chromo2[i], chromo1[i]
+
     return chromo1, chromo2
