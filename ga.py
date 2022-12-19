@@ -109,7 +109,9 @@ if __name__ == '__main__':
     start = time.time()
     
     args = get_parser()
+    # -> Load VRP problem
     instance = load_instance(args.input_path)
+    # -> get detail from vrp file
     n_customers = instance['Number_of_customers']
     demand = {}
     for i in range(1, n_customers+1):
@@ -118,11 +120,13 @@ if __name__ == '__main__':
     distance_matrix = instance['distance_matrix']
     cap_vehicle = instance['vehicle_capacity']
     depart = instance['depart']
+    
+    # -> set SSGA parameter
     n_population = args.pop_size
     iteration = args.iterations
     cur_iter = 1
     mutate_prob = args.mute_prob
-
+    # -> Initial Population 
     population = initialize_population(n_customers, n_population)
     prev_score, chromosome = get_chromosome(population, evaluate, distance_matrix, demand, cap_vehicle)
 
@@ -130,12 +134,13 @@ if __name__ == '__main__':
 
     while cur_iter <= iteration:
         # -> Start GA
-        chromosomes = get_chromosome(population, evaluate, distance_matrix, demand, cap_vehicle, k=2)
+        chromosomes = get_chromosome(population, evaluate, distance_matrix, demand, cap_vehicle, k=2) # k = number of chromosome in population
         chromosome1 = chromosomes[0][1]
         chromosome2 = chromosomes[1][1]
         
         # -> can change to single_point_crossover(chromo1,chromo2,points:int)  
         # -> can change to multi_point_crossover(chromo1,chromo2,points:int)
+        # -> can change to ordered_crossover(chromo1,chromo2)
         # -> can change to uniform_crossover(chromo1, chromo2, crossover_prob:float) 
         # -> detail in GACrossover.py
         offspring1, offspring2 = multi_point_crossover(chromosome1, chromosome2, 3)
