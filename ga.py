@@ -4,7 +4,7 @@ import json
 import random
 import argparse
 import matplotlib.pyplot as plt
-from ops.GACrossover import ordered_crossover
+from ops.GACrossover import ordered_crossover,multi_point_crossover
 from ops.GAMutation import mutate
 from ops.plotRoute import plot_route
 import time
@@ -149,7 +149,7 @@ if __name__ == '__main__':
         # -> can change to multi_point_crossover(chromo1,chromo2,points:int)
         # -> can change to uniform_crossover(chromo1, chromo2, crossover_prob:float) 
         # -> detail in GACrossover.py
-        offspring1, offspring2 = ordered_crossover(chromosome1, chromosome2)
+        offspring1, offspring2 = multi_point_crossover(chromosome1, chromosome2, 3)
         
         # -> Mutation
         offspring1 = mutate(offspring1, mutate_prob)
