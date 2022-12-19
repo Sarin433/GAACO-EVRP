@@ -53,6 +53,11 @@ Example
 - [ ] Combine GA and ACO
 - [ ] E-VRP Data Transformation (from text to JSON)
 
+## Result after running
+
+- runningtime.txt
+- cost and route in figure folder
+
 ## Reference
 
 - input data, ordered crossover, plotting route codes are borrowed from here. thanks for your work.👍
