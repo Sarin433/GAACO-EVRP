@@ -16,7 +16,7 @@ Feature:
 
 ref: https://www.geeksforgeeks.org/steady-state-genetic-algorithm-ssga/
 
-## How to run GA
+## How to run SSGA
 
 ```bash
 python ga.py
