@@ -4,7 +4,7 @@ import json
 import random
 import argparse
 import matplotlib.pyplot as plt
-from utilis.utils import load_instance
+from utils.utils import load_instance
 from ops.GACrossover import ordered_crossover,multi_point_crossover
 from ops.GAMutation import mutate
 from ops.plotRoute import plot_route
