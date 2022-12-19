@@ -47,7 +47,7 @@ Example
 
 ## Development Stage:
 
-- [x] Simple GA
+- [x] Steady State GA
 - [x] Data Transformation (from text to JSON)
 - [ ] Ant Colony Optimization (ACO)
 - [ ] Combine GA and ACO
