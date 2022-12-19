@@ -140,10 +140,18 @@ if __name__ == '__main__':
     score_history = [prev_score]
 
     while cur_iter <= iteration:
+        # -> Start GA
         chromosomes = get_chromosome(population, evaluate, distance_matrix, demand, cap_vehicle, k=2)
         chromosome1 = chromosomes[0][1]
         chromosome2 = chromosomes[1][1]
+        
+        # -> can change to single_point_crossover(chromo1,chromo2,points:int)  
+        # -> can change to multi_point_crossover(chromo1,chromo2,points:int)
+        # -> can change to uniform_crossover(chromo1, chromo2, crossover_prob:float) 
+        # -> detail in GACrossover.py
         offspring1, offspring2 = ordered_crossover(chromosome1, chromosome2)
+        
+        # -> Mutation
         offspring1 = mutate(offspring1, mutate_prob)
         offspring2 = mutate(offspring2, mutate_prob)
         score1 = evaluate(offspring1, distance_matrix, demand, cap_vehicle)
@@ -166,15 +174,18 @@ if __name__ == '__main__':
 
     print(score, chromosome)
     subroutes = evaluate(chromosome, distance_matrix, demand, cap_vehicle, return_subroute=True)
+    
     # record end time
     end = time.time()
     # print the difference between start
     # and end time in milli. secs
     print("The time of execution of above program is :", (end-start) * 10**3, "ms")
     
+    # -> Save rinning time(ms) in txt file
     f = open("runningtime.txt", "a")
     f.write(f"running time : {(end-start)* 10**3} ms \n")
     f.close()
+    
     # Plot Graph
     title = f"SSGA with CVRP, mute_prob={mutate_prob}"
     plot_route(subroutes, instance, title)
