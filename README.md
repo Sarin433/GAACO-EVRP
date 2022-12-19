@@ -2,6 +2,20 @@
 
 # Genetic Algorithm(GA) and Ant Colony Optimization(ACO) to solve vehicle routing problem \*(for my interest)
 
+## Steady State Genetic Algorithm
+
+SSGA stands for Steady-State Genetic Algorithm. It is steady-state meaning that there are no generations. It differs from the Simple Genetic Algorithm, as in that tournament selection does not replace the selected individuals in the population, and instead of adding the children of the selected parents into the next generation, the two best individuals out of the two parents and two children are added back into the population so that the population size remains constant.
+
+Feature:
+
+- Small Generation Gap.
+- Only 2 offspring produced in one generation.
+- Generally used for smaller population size N.
+- Less computationally expensive compared to Simple GA.
+- Population size N remains constant throughout.
+
+ref: https://www.geeksforgeeks.org/steady-state-genetic-algorithm-ssga/
+
 ## How to run GA
 
 ```bash
