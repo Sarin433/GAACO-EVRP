@@ -1,6 +1,0 @@
-running time : 354597.8407859802 ms 
-running time : 408.0395698547363 ms 
-running time : 440.3207302093506 ms 
-running time : 440.6740665435791 ms 
-running time : 475.7723808288574 ms 
-running time : 470.9346294403076 ms 

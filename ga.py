@@ -14,9 +14,9 @@ random.seed(0)
 
 def get_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--input_path', type=str, default="./data/Input_Data.json", required=False,
+    parser.add_argument('--input_path', type=str, default=".\data\json\homberger_200_customer_instances\c1_2_1.json", required=False,
                         help="Enter the input Json file name")
-    parser.add_argument('--pop_size', type=int, default=100, required=False,
+    parser.add_argument('--pop_size', type=int, default=50, required=False,
                         help="Enter the population size")
     parser.add_argument('--mute_prob', type=float, default=0.5, required=False,
                         help="Mutation Probabilty")
