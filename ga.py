@@ -45,7 +45,7 @@ def initialize_population(n_customers, n_population):
             population.append(chromosome)
     return population
 
-
+# -> new vehicle when max capacity
 def evaluate(chromosome, distance_matrix, demand, cap_vehicle, return_subroute=False):
     total_distance = 0
     cur_load = 0
@@ -93,7 +93,7 @@ def get_chromosome(population, func, *params, reverse=False, k=1):
         return scores[:k]
     else:
         raise Exception("invalid k")
-
+ 
 def replace(population, chromo_in, chromo_out):
     population[population.index(chromo_out)] = chromo_in
 
