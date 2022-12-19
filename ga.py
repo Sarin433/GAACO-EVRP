@@ -4,6 +4,7 @@ import json
 import random
 import argparse
 import matplotlib.pyplot as plt
+from utilis.utils import load_instance
 from ops.GACrossover import ordered_crossover,multi_point_crossover
 from ops.GAMutation import mutate
 from ops.plotRoute import plot_route
@@ -24,18 +25,6 @@ def get_parser():
                         help="Number of iterations to run")
 
     return parser.parse_args()
-
-
-def load_instance(json_file):
-    """
-    Inputs: path to json file
-    Outputs: json file object if it exists, or else returns NoneType
-    """
-    if os.path.exists(path=json_file):
-        with io.open(json_file, 'rt', newline='') as file_object:
-            return json.load(file_object)
-    return None
-
 
 def initialize_population(n_customers, n_population):
     population = []
